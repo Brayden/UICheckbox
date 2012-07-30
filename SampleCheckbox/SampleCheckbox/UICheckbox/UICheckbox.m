@@ -16,6 +16,10 @@
 @synthesize checked = _checked;
 @synthesize disabled = _disabled;
 
+-(void)awakeFromNib {
+    self.backgroundColor = [UIColor clearColor];
+}
+
 -(void)drawRect:(CGRect)rect {
     UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"uicheckbox_%@checked.png", (self.checked) ? @"" : @"un"]];
     [image drawInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
