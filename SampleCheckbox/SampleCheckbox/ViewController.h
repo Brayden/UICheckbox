@@ -1,5 +1,5 @@
 //
-//    UICheckbox.h
+//    ViewController.h
 //
 //    Author:    Brayden Wilmoth
 //    Co-Author: Jordan Perry
@@ -10,14 +10,14 @@
 //    http://www.github.com/jordanperry/
 //
 
-#import <UIKit/UIKit.h>
+@class UICheckbox;
 
-@interface UICheckbox : UIControl
+@interface ViewController : UIViewController
 
--(void)setChecked:(BOOL)boolValue;
--(void)setDisabled:(BOOL)boolValue;
+-(IBAction)testCheckbox:(id)sender;
+-(IBAction)testChecking;
+-(IBAction)testDisabling;
 
-@property(nonatomic, assign)BOOL checked;
-@property(nonatomic, assign)BOOL disabled;
+@property(nonatomic, weak)IBOutlet UICheckbox *checkbox;
 
 @end

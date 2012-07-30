@@ -1,5 +1,5 @@
 //
-//    UICheckbox.h
+//    AppDelegate.h
 //
 //    Author:    Brayden Wilmoth
 //    Co-Author: Jordan Perry
@@ -12,12 +12,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UICheckbox : UIControl
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
--(void)setChecked:(BOOL)boolValue;
--(void)setDisabled:(BOOL)boolValue;
-
-@property(nonatomic, assign)BOOL checked;
-@property(nonatomic, assign)BOOL disabled;
+@property (strong, nonatomic) UIWindow *window;
 
 @end
