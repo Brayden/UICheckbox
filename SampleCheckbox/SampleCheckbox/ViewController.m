@@ -23,6 +23,7 @@
     
     self.checkbox.checked = TRUE;
     self.checkbox.disabled = FALSE;
+    self.checkbox.text = @"Testttt";
 }
 
 -(IBAction)testCheckbox:(id)sender {
