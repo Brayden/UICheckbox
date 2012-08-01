@@ -45,8 +45,6 @@
     }
     
     if(self.text) {
-        _textLabel.text = self.text;
-        
         if(!loaded) {
             _textLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width + 5, 0, 1024, 30)];
             _textLabel.backgroundColor = [UIColor clearColor];
@@ -54,6 +52,8 @@
 
             loaded = TRUE;
         }
+        
+        _textLabel.text = self.text;
     }
 }
 

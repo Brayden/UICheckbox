@@ -12,9 +12,21 @@
 
 #import "UICheckbox.h"
 
+@interface UICheckbox (){
+    BOOL loaded;
+}
+
+@property(nonatomic, strong)UILabel *textLabel;
+
+@end
+
+
+
 @implementation UICheckbox
 @synthesize checked = _checked;
 @synthesize disabled = _disabled;
+@synthesize text = _text;
+@synthesize textLabel = _textLabel;
 
 -(void)awakeFromNib {
     self.backgroundColor = [UIColor clearColor];
@@ -31,6 +43,18 @@
         self.userInteractionEnabled = TRUE;
         self.alpha = 1.0f;
     }
+    
+    if(self.text) {
+        if(!loaded) {
+            _textLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width + 5, 0, 1024, 30)];
+            _textLabel.backgroundColor = [UIColor clearColor];
+            [self addSubview:_textLabel];
+
+            loaded = TRUE;
+        }
+        
+        _textLabel.text = self.text;
+    }
 }
 
 -(BOOL)beginTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
@@ -45,6 +69,11 @@
 
 -(void)setDisabled:(BOOL)boolValue {
     _disabled = boolValue;
+    [self setNeedsDisplay];
+}
+
+-(void)setText:(NSString *)stringValue {
+    _text = stringValue;
     [self setNeedsDisplay];
 }
 
