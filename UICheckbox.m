@@ -3,16 +3,16 @@
 //
 //    Author:    Brayden Wilmoth
 //    Co-Author: Jordan Perry
-//    Edited:    07/17/2012
+//    Edited:    01/15/2014
 //
-//    Copyright (c) 2012 Brayden Wilmoth.  All rights reserved.
+//    Copyright (c) 2012 - 2014 Brayden Wilmoth.  All rights reserved.
 //    http://www.github.com/brayden/
 //    http://www.github.com/jordanperry/
 //
 
 #import "UICheckbox.h"
 
-@interface UICheckbox (){
+@interface UICheckbox () {
     BOOL loaded;
 }
 
@@ -28,15 +28,22 @@
 @synthesize text = _text;
 @synthesize textLabel = _textLabel;
 
--(void)awakeFromNib {
+- (void)awakeFromNib {
     self.backgroundColor = [UIColor clearColor];
 }
 
--(void)drawRect:(CGRect)rect {
+#if !__has_feature(objc_arc)
+- (void)dealloc {
+    [_text release];
+    [super dealloc];
+}
+#endif
+
+- (void)drawRect:(CGRect)rect {
     UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"uicheckbox_%@checked.png", (self.checked) ? @"" : @"un"]];
     [image drawInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     
-    if(self.disabled) {
+    if (self.disabled) {
         self.userInteractionEnabled = FALSE;
         self.alpha = 0.7f;
     } else {
@@ -44,7 +51,7 @@
         self.alpha = 1.0f;
     }
     
-    if(self.text) {
+    if (self.text) {
         if(!loaded) {
             _textLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width + 5, 0, 1024, 30)];
             _textLabel.backgroundColor = [UIColor clearColor];
@@ -57,23 +64,28 @@
     }
 }
 
--(BOOL)beginTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
+- (BOOL)beginTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
     [self setChecked:!self.checked];
     return TRUE;
 }
 
--(void)setChecked:(BOOL)boolValue {
+- (void)setChecked:(BOOL)boolValue {
     _checked = boolValue;
     [self setNeedsDisplay];
 }
 
--(void)setDisabled:(BOOL)boolValue {
+- (void)setDisabled:(BOOL)boolValue {
     _disabled = boolValue;
     [self setNeedsDisplay];
 }
 
--(void)setText:(NSString *)stringValue {
+- (void)setText:(NSString *)stringValue {
+#if __has_feature(objc_arc)
     _text = stringValue;
+#else
+    _text = [stringValue retain];
+#endif
+    
     [self setNeedsDisplay];
 }
 
