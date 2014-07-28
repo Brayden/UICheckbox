@@ -16,11 +16,11 @@
 		54A3D94E15C7322F001843A5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54A3D94C15C7322F001843A5 /* MainStoryboard.storyboard */; };
 		54A3D95115C7322F001843A5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A3D95015C7322F001843A5 /* ViewController.m */; };
 		AE75ABCF19864990009D2158 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE75ABCE19864990009D2158 /* Default-568h@2x.png */; };
-		AE75ABDB19867118009D2158 /* UICheckbox.m in Sources */ = {isa = PBXBuildFile; fileRef = AE75ABD619867118009D2158 /* UICheckbox.m */; };
-		AE75ABDC19867118009D2158 /* uicheckbox_checked.png in Resources */ = {isa = PBXBuildFile; fileRef = AE75ABD719867118009D2158 /* uicheckbox_checked.png */; };
-		AE75ABDD19867118009D2158 /* uicheckbox_checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE75ABD819867118009D2158 /* uicheckbox_checked@2x.png */; };
-		AE75ABDE19867118009D2158 /* uicheckbox_unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = AE75ABD919867118009D2158 /* uicheckbox_unchecked.png */; };
-		AE75ABDF19867118009D2158 /* uicheckbox_unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE75ABDA19867118009D2158 /* uicheckbox_unchecked@2x.png */; };
+		AE75ABE819869923009D2158 /* uicheckbox_checked.png in Resources */ = {isa = PBXBuildFile; fileRef = AE75ABE219869923009D2158 /* uicheckbox_checked.png */; };
+		AE75ABE919869923009D2158 /* uicheckbox_checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE75ABE319869923009D2158 /* uicheckbox_checked@2x.png */; };
+		AE75ABEA19869923009D2158 /* uicheckbox_unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = AE75ABE419869923009D2158 /* uicheckbox_unchecked.png */; };
+		AE75ABEB19869923009D2158 /* uicheckbox_unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE75ABE519869923009D2158 /* uicheckbox_unchecked@2x.png */; };
+		AE75ABEC19869923009D2158 /* UICheckbox.m in Sources */ = {isa = PBXBuildFile; fileRef = AE75ABE719869923009D2158 /* UICheckbox.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,12 +38,12 @@
 		54A3D94F15C7322F001843A5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		54A3D95015C7322F001843A5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AE75ABCE19864990009D2158 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		AE75ABD519867118009D2158 /* UICheckbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICheckbox.h; sourceTree = "<group>"; };
-		AE75ABD619867118009D2158 /* UICheckbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICheckbox.m; sourceTree = "<group>"; };
-		AE75ABD719867118009D2158 /* uicheckbox_checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uicheckbox_checked.png; sourceTree = "<group>"; };
-		AE75ABD819867118009D2158 /* uicheckbox_checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "uicheckbox_checked@2x.png"; sourceTree = "<group>"; };
-		AE75ABD919867118009D2158 /* uicheckbox_unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uicheckbox_unchecked.png; sourceTree = "<group>"; };
-		AE75ABDA19867118009D2158 /* uicheckbox_unchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "uicheckbox_unchecked@2x.png"; sourceTree = "<group>"; };
+		AE75ABE219869923009D2158 /* uicheckbox_checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uicheckbox_checked.png; sourceTree = "<group>"; };
+		AE75ABE319869923009D2158 /* uicheckbox_checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "uicheckbox_checked@2x.png"; sourceTree = "<group>"; };
+		AE75ABE419869923009D2158 /* uicheckbox_unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uicheckbox_unchecked.png; sourceTree = "<group>"; };
+		AE75ABE519869923009D2158 /* uicheckbox_unchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "uicheckbox_unchecked@2x.png"; sourceTree = "<group>"; };
+		AE75ABE619869923009D2158 /* UICheckbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICheckbox.h; sourceTree = "<group>"; };
+		AE75ABE719869923009D2158 /* UICheckbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICheckbox.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +90,7 @@
 		54A3D94015C7322F001843A5 /* SampleCheckbox */ = {
 			isa = PBXGroup;
 			children = (
-				AE75ABD419867118009D2158 /* UICheckbox */,
+				AE75ABE019869923009D2158 /* UICheckbox */,
 				54A3D94915C7322F001843A5 /* AppDelegate.h */,
 				54A3D94A15C7322F001843A5 /* AppDelegate.m */,
 				54A3D94C15C7322F001843A5 /* MainStoryboard.storyboard */,
@@ -113,19 +113,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		AE75ABD419867118009D2158 /* UICheckbox */ = {
+		AE75ABE019869923009D2158 /* UICheckbox */ = {
 			isa = PBXGroup;
 			children = (
-				AE75ABD519867118009D2158 /* UICheckbox.h */,
-				AE75ABD619867118009D2158 /* UICheckbox.m */,
-				AE75ABD719867118009D2158 /* uicheckbox_checked.png */,
-				AE75ABD819867118009D2158 /* uicheckbox_checked@2x.png */,
-				AE75ABD919867118009D2158 /* uicheckbox_unchecked.png */,
-				AE75ABDA19867118009D2158 /* uicheckbox_unchecked@2x.png */,
+				AE75ABE119869923009D2158 /* Resources */,
+				AE75ABE619869923009D2158 /* UICheckbox.h */,
+				AE75ABE719869923009D2158 /* UICheckbox.m */,
 			);
 			name = UICheckbox;
-			path = ../UICheckbox;
-			sourceTree = SOURCE_ROOT;
+			path = ../../UICheckbox;
+			sourceTree = "<group>";
+		};
+		AE75ABE119869923009D2158 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AE75ABE219869923009D2158 /* uicheckbox_checked.png */,
+				AE75ABE319869923009D2158 /* uicheckbox_checked@2x.png */,
+				AE75ABE419869923009D2158 /* uicheckbox_unchecked.png */,
+				AE75ABE519869923009D2158 /* uicheckbox_unchecked@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -177,10 +185,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE75ABDD19867118009D2158 /* uicheckbox_checked@2x.png in Resources */,
-				AE75ABDF19867118009D2158 /* uicheckbox_unchecked@2x.png in Resources */,
-				AE75ABDE19867118009D2158 /* uicheckbox_unchecked.png in Resources */,
-				AE75ABDC19867118009D2158 /* uicheckbox_checked.png in Resources */,
+				AE75ABE919869923009D2158 /* uicheckbox_checked@2x.png in Resources */,
+				AE75ABEB19869923009D2158 /* uicheckbox_unchecked@2x.png in Resources */,
+				AE75ABEA19869923009D2158 /* uicheckbox_unchecked.png in Resources */,
+				AE75ABE819869923009D2158 /* uicheckbox_checked.png in Resources */,
 				54A3D94515C7322F001843A5 /* InfoPlist.strings in Resources */,
 				54A3D94E15C7322F001843A5 /* MainStoryboard.storyboard in Resources */,
 				AE75ABCF19864990009D2158 /* Default-568h@2x.png in Resources */,
@@ -194,7 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE75ABDB19867118009D2158 /* UICheckbox.m in Sources */,
+				AE75ABEC19869923009D2158 /* UICheckbox.m in Sources */,
 				54A3D94715C7322F001843A5 /* main.m in Sources */,
 				54A3D94B15C7322F001843A5 /* AppDelegate.m in Sources */,
 				54A3D95115C7322F001843A5 /* ViewController.m in Sources */,
