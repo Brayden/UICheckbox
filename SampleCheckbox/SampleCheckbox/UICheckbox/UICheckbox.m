@@ -12,67 +12,86 @@
 
 #import "UICheckbox.h"
 
-@interface UICheckbox (){
-    BOOL loaded;
-}
+@interface UICheckbox ()
 
-@property(nonatomic, strong)UILabel *textLabel;
+@property (nonatomic, assign) BOOL loaded;
+@property (nonatomic, strong) UILabel *textLabel;
+@property (nonatomic, strong) UIImage *image;
 
 @end
 
-
-
 @implementation UICheckbox
-@synthesize checked = _checked;
-@synthesize disabled = _disabled;
-@synthesize text = _text;
-@synthesize textLabel = _textLabel;
 
--(void)awakeFromNib {
+- (void) awakeFromNib
+{
     self.backgroundColor = [UIColor clearColor];
+    
+    _textLabel = [[UILabel alloc] init];
+    [self addSubview:_textLabel];
 }
 
--(void)drawRect:(CGRect)rect {
-    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"uicheckbox_%@checked.png", (self.checked) ? @"" : @"un"]];
-    [image drawInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+- (void) drawRect:(CGRect)rect
+{
+    if (_imageNameCheched && _imageNameNoCheched)
+    {
+        _image = [UIImage imageNamed:_checked ? _imageNameCheched : _imageNameNoCheched];
+    }
     
-    if(self.disabled) {
+    if(!_image || !_imageNameCheched || !_imageNameNoCheched)
+    {
+        _image = [UIImage imageNamed:[NSString stringWithFormat:@"uicheckbox_%@checked.png", _checked ? @"" : @"un"]];
+    }
+    
+    [_image drawInRect:CGRectMake((self.frame.size.width - _image.size.width) / 2.0f, (self.frame.size.height - _image.size.height) / 2.0f, _image.size.width, _image.size.height)];
+    
+    if(_disabled)
+    {
         self.userInteractionEnabled = FALSE;
         self.alpha = 0.7f;
-    } else {
+    }
+    else
+    {
         self.userInteractionEnabled = TRUE;
         self.alpha = 1.0f;
     }
     
-    if(self.text) {
-        if(!loaded) {
-            _textLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width + 5, 0, 1024, 30)];
-            _textLabel.backgroundColor = [UIColor clearColor];
-            [self addSubview:_textLabel];
+    if(_text && _text.length)
+    {
+        if(!_loaded)
+        {
+            [_textLabel setFrame:CGRectMake(self.frame.size.width + 5, 0, 1024, self.frame.size.height)];
+            [_textLabel setBackgroundColor:[UIColor clearColor]];
 
-            loaded = TRUE;
+            _loaded = TRUE;
         }
         
-        _textLabel.text = self.text;
+        _textLabel.text = _text;
     }
 }
 
--(BOOL)beginTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
-    [self setChecked:!self.checked];
+- (BOOL) beginTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    [self setChecked:!_checked];
     return TRUE;
 }
 
--(void)setChecked:(BOOL)boolValue {
+- (void) setChecked:(BOOL)boolValue
+{
     _checked = boolValue;
     [self setNeedsDisplay];
+    
+    if([_delegate respondsToSelector:@selector(changeStateCheckBox:withState:)])
+        [_delegate changeStateCheckBox:self withState:_checked];
 }
 
--(void)setDisabled:(BOOL)boolValue {
+- (void) setDisabled:(BOOL)boolValue
+{
     _disabled = boolValue;
     [self setNeedsDisplay];
 }
 
--(void)setText:(NSString *)stringValue {
+- (void) setText:(NSString *)stringValue
+{
     _text = stringValue;
     [self setNeedsDisplay];
 }

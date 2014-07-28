@@ -10,14 +10,8 @@
 //    http://www.github.com/jordanperry/
 //
 
-@class UICheckbox;
+#import "UICheckbox.h"
 
-@interface ViewController : UIViewController
-
--(IBAction)testCheckbox:(id)sender;
--(IBAction)testChecking;
--(IBAction)testDisabling;
-
-@property(nonatomic, weak)IBOutlet UICheckbox *checkbox;
+@interface ViewController : UIViewController<UICheckBoxDelegate>
 
 @end
