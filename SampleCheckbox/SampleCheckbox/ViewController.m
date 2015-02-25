@@ -11,32 +11,52 @@
 //
 
 #import "ViewController.h"
-#import "UICheckbox.h"
+
+@interface ViewController()
+
+-(IBAction)testCheckbox:(id)sender;
+-(IBAction)testChecking;
+-(IBAction)testDisabling;
+
+@property(nonatomic, weak)IBOutlet UICheckbox *checkbox;
+
+@end
 
 
 @implementation ViewController
-@synthesize checkbox = _checkbox;
 
 -(void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.checkbox.checked = TRUE;
-    self.checkbox.disabled = FALSE;
-    self.checkbox.text = @"Testttt";
+    _checkbox.checked = TRUE;
+    _checkbox.disabled = FALSE;
+    _checkbox.text = @"Testttt";
+    
+    //_checkbox.imageNameCheched = @"";
+    //_checkbox.imageNameNoCheched = @"";
+    _checkbox.delegate = self;
 }
 
--(IBAction)testCheckbox:(id)sender {
-    NSLog(@"checkbox.checked = %@", (self.checkbox.checked) ? @"YES" : @"NO");
-    NSLog(@"checkbox.disabled = %@", (self.checkbox.disabled) ? @"YES" : @"NO");
+-(IBAction)testCheckbox:(id)sender
+{
+    NSLog(@"checkbox.checked = %@", (_checkbox.checked) ? @"YES" : @"NO");
+    NSLog(@"checkbox.disabled = %@", (_checkbox.disabled) ? @"YES" : @"NO");
 }
 
--(IBAction)testChecking {
-    self.checkbox.checked = !self.checkbox.checked;
+-(IBAction)testChecking
+{
+    _checkbox.checked = !_checkbox.checked;
 }
 
--(IBAction)testDisabling {
-    self.checkbox.disabled = !self.checkbox.disabled;
+-(IBAction)testDisabling
+{
+    _checkbox.disabled = !_checkbox.disabled;
+}
+
+- (void)changeStateCheckBox:(UICheckbox *)checkBox withState:(BOOL)newState
+{
+    NSLog(@"Change State in CheckBox");
 }
 
 @end
