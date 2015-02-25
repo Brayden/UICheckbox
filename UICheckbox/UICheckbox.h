@@ -31,8 +31,8 @@
 @property (nonatomic, assign) BOOL disabled;
 @property (nonatomic, strong) NSString *text;
 
-@property (nonatomic, strong) NSString *imageNameCheched;
-@property (nonatomic, strong) NSString *imageNameNoCheched;
+@property (nonatomic, strong) NSString *imageNameChecked;
+@property (nonatomic, strong) NSString *imageNameNoChecked;
 
 @property (nonatomic, strong) id<UICheckBoxDelegate>delegate;
 

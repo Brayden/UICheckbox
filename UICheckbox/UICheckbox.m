@@ -32,17 +32,22 @@
 
 - (void) drawRect:(CGRect)rect
 {
-    if (_imageNameCheched && _imageNameNoCheched)
+    if (_imageNameChecked && _imageNameNoChecked)
     {
-        _image = [UIImage imageNamed:_checked ? _imageNameCheched : _imageNameNoCheched];
+        _image = [UIImage imageNamed:_checked ? _imageNameChecked : _imageNameNoChecked];
     }
     
-    if(!_image || !_imageNameCheched || !_imageNameNoCheched)
+    if(!_image || !_imageNameChecked || !_imageNameNoChecked)
     {
         _image = [UIImage imageNamed:[NSString stringWithFormat:@"uicheckbox_%@checked.png", _checked ? @"" : @"un"]];
     }
+
+    UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, 0.0);
+    [_image drawInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    _image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
     
-    [_image drawInRect:CGRectMake((self.frame.size.width - _image.size.width) / 2.0f, (self.frame.size.height - _image.size.height) / 2.0f, _image.size.width, _image.size.height)];
+    [_image drawAsPatternInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     
     if(_disabled)
     {
